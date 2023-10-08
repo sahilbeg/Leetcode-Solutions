@@ -4,6 +4,7 @@ public class Main {
         for(int i = 1; i < 5; i++) {
             list.insert(i);
         }
+        list.append(5);
         list.display();
     }
 }
