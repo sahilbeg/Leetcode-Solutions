@@ -1,6 +1,7 @@
+package com.sahilbeg.LinkedList;
 public class Node<T> {
     T data;
-    Node next;
+    Node<T> next;
 
     Node(T data) {
         this.data = data;
