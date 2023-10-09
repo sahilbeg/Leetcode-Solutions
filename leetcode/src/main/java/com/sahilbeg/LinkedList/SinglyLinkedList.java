@@ -1,4 +1,7 @@
 package com.sahilbeg.LinkedList;
+
+import org.omg.DynamicAny.NameDynAnyPair;
+
 public class SinglyLinkedList<T> {
     Node<T> head;
     int size;
@@ -94,5 +97,24 @@ public class SinglyLinkedList<T> {
         }
         currentNode.next = currentNode.next.next;
         this.size--;
+    }
+
+    //Method to reverse a linkedlist
+    public void reverseList(){
+        Node <T> previous = null;
+        Node <T> currentNode = head;
+        Node <T> next;
+
+        if(this.size ==0 || this.size ==1){
+            System.out.println(head.data);
+        }
+
+        while(currentNode != null){
+            next = currentNode.next;
+            currentNode.next = previous;
+            previous = currentNode;
+            currentNode = next;
+        }
+        head = previous;
     }
 }
