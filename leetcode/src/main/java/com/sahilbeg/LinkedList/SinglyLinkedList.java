@@ -1,7 +1,5 @@
 package com.sahilbeg.LinkedList;
 
-import org.omg.DynamicAny.NameDynAnyPair;
-
 public class SinglyLinkedList<T> {
     Node<T> head;
     int size;
@@ -37,7 +35,7 @@ public class SinglyLinkedList<T> {
     //Method to insert a node at the End
     public void append(T data){
         Node<T> temp = new Node<T>(data);
-        Node<T> currentNode =  head;
+        Node<T> currentNode =  this.head;
         while(currentNode.next != null){
             currentNode = currentNode.next;
         }
@@ -48,7 +46,7 @@ public class SinglyLinkedList<T> {
     //Method to add a node at a position
     public void update(T data, int pos){
         Node<T> temp = new Node<T>(data);
-        Node<T> currentNode = head;
+        Node<T> currentNode = this.head;
         int position = 1;
         while (position < pos - 1) {
             currentNode = currentNode.next;
@@ -64,22 +62,22 @@ public class SinglyLinkedList<T> {
         if(this.size < 2){
             System.out.println("There is no list to delete!!");
         }else{
-            head = head.next;
+            this.head = this.head.next;
         }
     }
 
     //Method to delete from the end
     public void pop() {
-        if (head == null) {
+        if (this.head == null) {
             System.out.println("There is no list to delete!!");
             return;
         }
-        if (head.next == null) {
-            head = null;
+        if (this.head.next == null) {
+            this.head = null;
             this.size--;
             return;
         }
-        Node<T> currentNode = head;
+        Node<T> currentNode = this.head;
         while (currentNode.next.next != null) {
             currentNode = currentNode.next;
         }
@@ -89,7 +87,7 @@ public class SinglyLinkedList<T> {
 
     //Method to add a node at a position
     public void remove(int pos){
-        Node<T> currentNode = head;
+        Node<T> currentNode = this.head;
         int position = 1;
         while (position < pos - 1) {
             currentNode = currentNode.next;
@@ -102,11 +100,11 @@ public class SinglyLinkedList<T> {
     //Method to reverse a linkedlist
     public void reverseList(){
         Node <T> previous = null;
-        Node <T> currentNode = head;
+        Node <T> currentNode = this.head;
         Node <T> next;
 
         if(this.size ==0 || this.size ==1){
-            System.out.println(head.data);
+            System.out.println(this.head.data);
         }
 
         while(currentNode != null){
@@ -115,6 +113,6 @@ public class SinglyLinkedList<T> {
             previous = currentNode;
             currentNode = next;
         }
-        head = previous;
+        this.head = previous;
     }
 }
