@@ -153,4 +153,29 @@ public class SinglyLinkedList<T> {
         }
 
     }
+
+    //Method to find where the cycle is linked
+    public Node<T> detectCycle() {
+        if (this.head == null) {
+            return null;
+        } else {
+            Node<T> slow = head;
+            Node<T> fast = head;
+            while (fast != null && fast.next != null) {
+                slow = slow.next;
+                fast = fast.next.next;
+    
+                if (slow == fast) {
+                    slow = head;
+                    while (slow != fast) {
+                        slow = slow.next;
+                        fast = fast.next;
+                    }
+                    return slow;
+                }
+            }
+    
+            return null;
+        }
+    }
 }

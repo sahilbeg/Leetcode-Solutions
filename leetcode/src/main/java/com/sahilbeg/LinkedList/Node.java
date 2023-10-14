@@ -1,6 +1,6 @@
 package com.sahilbeg.LinkedList;
 public class Node<T> {
-    T data;
+    public T data;
     Node<T> next;
 
     Node(T data) {
