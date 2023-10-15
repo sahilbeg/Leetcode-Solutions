@@ -98,13 +98,13 @@ public class SinglyLinkedList<T> {
 
     // Method to reverse a linkedlist
     public void reverseList() {
-        Node<T> previous = null;
-        Node<T> currentNode = this.head;
-        Node<T> next;
-
         if (this.size == 0 || this.size == 1) {
             System.out.println(this.head.data);
         }
+
+        Node<T> previous = null;
+        Node<T> currentNode = this.head;
+        Node<T> next;
 
         while (currentNode != null) {
             next = currentNode.next;
@@ -178,4 +178,5 @@ public class SinglyLinkedList<T> {
             return null;
         }
     }
+
 }
