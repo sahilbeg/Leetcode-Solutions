@@ -1,6 +1,7 @@
 package com.sahilbeg.HashSet;
 import java.util.HashSet; //importing the hashSet library
 
+
 public class Hashing {
 
     public static void main(String args[]){
@@ -10,15 +11,30 @@ public class Hashing {
         set.add(1);
         set.add(2);
         set.add(3);
-        set.add(4);
+        set.add(1);
+
+        // find the size
+        int size = set.size();
+        System.out.println("Size of the Hashset:-  "+size);
+
+        //Print all the elements of the HashSet
+        System.out.println("My Hashset is:- "+set); 
 
         // Searching values into hashSet
-        if(set.contains(4)){
+        if(set.contains(3)){
             System.out.println("Elemnet is present");
+        }else{
+            System.out.println("Does not contain the element");
         }
 
-        if(!set.contains(6)){
-            System.out.println("Does not contain the element");
+        //Deleting the elements from the list
+        set.remove(3);
+
+        // Searching values into hashSet
+        if(set.contains(3)){
+            System.out.println("Elemnet is present");
+        }else{
+            System.out.println("We deleted  the element");
         }
     }
 }
